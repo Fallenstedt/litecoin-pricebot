@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/Fallenstedt/litecoin-pricebot/issues"
   },
-  "homepage": "https://github.com/Fallenstedt/litecoin-pricebot#readme"
+  "homepage": "https://github.com/Fallenstedt/litecoin-pricebot#readme",
+  "dependencies": {
+    "async": "^2.4.1",
+    "dotenv": "^4.0.0"
+  }
 }
