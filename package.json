@@ -1,0 +1,22 @@
+{
+  "name": "litecoin-pricebot",
+  "version": "1.0.0",
+  "description": "A bot that posts the current price of litecoin every couple of hours",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fallenstedt/litecoin-pricebot.git"
+  },
+  "keywords": [
+    "litecoin"
+  ],
+  "author": "Alex Fallenstedt, Weston Wedding",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fallenstedt/litecoin-pricebot/issues"
+  },
+  "homepage": "https://github.com/Fallenstedt/litecoin-pricebot#readme"
+}
