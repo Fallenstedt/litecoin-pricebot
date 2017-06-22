@@ -16,6 +16,7 @@ new CronJob('00 59 * * * *', () => {
 
   function tweetCoinInfo(formattedData, callback) {
     poster.tweet(formattedData, callback);
+    console.log('posted info!', formattedData);
   }
 
   function logStuff(err, formattedData) {
