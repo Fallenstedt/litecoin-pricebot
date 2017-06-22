@@ -7,15 +7,18 @@ This bot fetches the current price of [Litecoin](https://litecoin.org/), a globa
 1. Clone this repository with `git clone https://github.com/Fallenstedt/litecoin-pricebot.git`
 1. Navigate to the directory and run `npm install`
 1. Use LTC's twitter credentials and place them into `config/.env`
+```
+CONSUMER_KEY=<key goes here>
+CONSUMER_SECRET=<key goes here>
+ACCESS_TOKEN=<key goes here>
+ACCESS_SECRET=<key goes here>
+```
 1. Launch app with `npm start`
 
 ## Running the tests
 
 Run tests with `npm run test`
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+TODO: make tests...
 
 ## Built With
 
