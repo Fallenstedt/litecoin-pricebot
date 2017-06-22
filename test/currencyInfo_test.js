@@ -4,21 +4,25 @@ const dummyData = require('../js/dummyData');
 const expect = require('chai').expect;
 
 describe("currencyInfo ", ()=>{
-  before
   describe("it should parse an array for desired data", (done) => {
     var result;
 
     beforeEach((done) => {
-      result = currencyInfo.formatResponse(dummyData);
+      var callback = function(err, result) {
+        if (err) { console.error(err);}
+        return result;
+      }
+      result = currencyInfo.formatResponse(dummyData, callback);
       done();
     })
-
-    it("returns an object", (done)=>{
-      expect(result).to.be.a('object');
+    
+    xit("returns an function", (done)=>{
+      console.log(result);
+      expect(result).to.be.a('function');
       done();
     });
 
-    it("returns an object with values in each key", (done) => {
+    xit("returns an function with values in each key", (done) => {
       var values = Object.keys(result).map((key) => {
         return result[key];
       });
