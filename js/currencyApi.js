@@ -1,30 +1,25 @@
 var https = require('https');
 
 const currencyApi = {
-  makeRequest: () => {
-    https.get("https://api.coinmarketcap.com/v1/ticker/litecoin/", (response) => {
+  makeRequest: (callback) => {
+    var yummyData = https.get("https://api.coinmarketcap.com/v1/ticker/litecoin/", (response) => {
       var body = "";
       response.on("data", (data) =>{
         body += data;
       });
       response.on("end", () => {
         var data = parseData(body);
-        console.log(data);
+        callback(null, data);
       });
       response.on("error", () => {
-        handleError(error);
+        callback(error);
       });
     });
   }
 }
 
-function handleError(error){
-  console.error(error);
-};
-
 function parseData(body) {
-  var parsed = JSON.parse(body);
-  console.log(parsed);
+  return JSON.parse(body);
 };
 
 module.exports = currencyApi;
