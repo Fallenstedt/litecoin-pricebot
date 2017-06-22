@@ -2,8 +2,16 @@ require('dotenv').config({path: './config/.env'})
 const currencyInfo = require('./js/currencyInfo');
 const poster = require('./js/twitterPoster')
 
-currencyInfo.fetchCoinInfo(logStuff);
+currencyInfo.fetchCoinInfo(tweetCoinInfo);
+
+function tweetCoinInfo(err, formattedData) {
+  poster.tweet(formattedData, logStuff);
+}
+
 
 function logStuff(err, formattedData) {
-  console.log(formattedData);
+  if (err) {
+    console.error(err);
+  }
+  console.log("data", formattedData);
 }

@@ -33,13 +33,13 @@ const TwitterApi = {
       process.env.ACCESS_TOKEN,
       process.env.ACCESS_SECRET,
       params,
-      function(err, oauth_token, oauth_token_secret, results) {
+      function(err, results) {
         if (err) {
           let errorCode = err.statusCode;
           let errorData = JSON.parse(err.data);
           throw new Error(errorCode + " - " + errorData.errors[0].message);
         }
-        callback();
+        callback(null, results);
       }
     );
   }
