@@ -3,19 +3,27 @@ const async = require('async');
 const currencyInfo = require('./js/currencyInfo');
 const poster = require('./js/twitterPoster')
 
-async.waterfall([
-  currencyInfo.fetchCoinInfo,
-  tweetCoinInfo
-], logStuff);
 
-function tweetCoinInfo(formattedData, callback) {
-  poster.tweet(formattedData, callback);
-}
+var CronJob = require('cron').CronJob;
 
+new CronJob('00 59 * * * *', () => {
 
-function logStuff(err, formattedData) {
-  if (err) {
-    console.error(err);
+  //fetch data and post it to twitter
+  async.waterfall([
+    currencyInfo.fetchCoinInfo,
+    tweetCoinInfo
+  ], logStuff);
+
+  function tweetCoinInfo(formattedData, callback) {
+    poster.tweet(formattedData, callback);
   }
-  console.log("data", formattedData);
-}
+
+  function logStuff(err, formattedData) {
+    if (err) {
+      console.error(err);
+    }
+    console.log("data", formattedData);
+  }
+
+
+}, null, true, "America/Los_Angeles")
