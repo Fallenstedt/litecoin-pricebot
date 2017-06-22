@@ -1,11 +1,15 @@
 require('dotenv').config({path: './config/.env'})
+const async = require('async');
 const currencyInfo = require('./js/currencyInfo');
 const poster = require('./js/twitterPoster')
 
-currencyInfo.fetchCoinInfo(tweetCoinInfo);
+async.waterfall([
+  currencyInfo.fetchCoinInfo,
+  tweetCoinInfo
+], logStuff);
 
-function tweetCoinInfo(err, formattedData) {
-  poster.tweet(formattedData, logStuff);
+function tweetCoinInfo(formattedData, callback) {
+  poster.tweet(formattedData, callback);
 }
 
 
