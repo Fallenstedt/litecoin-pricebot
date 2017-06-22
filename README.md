@@ -9,24 +9,6 @@ This bot fetches the current price of [Litecoin](https://litecoin.org/), a globa
 1. Use LTC's twitter credentials and place them into `config/.env`
 1. Launch app with `npm start`
 
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
 ## Running the tests
 
 Run tests with `npm run test`
@@ -53,4 +35,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-This project was inspired by the other price bots that exist on twitter. No price bot existed for Litecoin, so we decided to build one for everyone to use. 
+This project was inspired by the other price bots that exist on twitter. No price bot existed for Litecoin, so we decided to build one for everyone to use.
