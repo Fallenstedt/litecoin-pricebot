@@ -6,7 +6,7 @@ describe('Twitter API',function(){
   require('dotenv').config({path: './config/.env'})
   var api = require('../js/twitterApi');
 
-  it('test initial authorization progress', function(done){
-    api.authenticate(done);
+  xit('tests the posting process', function(done){
+    api.makeTweet("Testing testing testing!", done);
   });
 });
