@@ -4,20 +4,27 @@ const currencyApi = {
   makeRequest: () => {
     https.get("https://api.coinmarketcap.com/v1/ticker/litecoin/", (response) => {
       var body = "";
-      response.on("data", (data) => {
-        console.log("Request was made...");
+      response.on("data", (data) =>{
         body += data;
       });
       response.on("end", () => {
-        var parsed = JSON.parse(body);
-        console.log(parsed);
+        var data = parseData(body);
+        console.log(data);
       });
-      response.on("error", (error) => {
-        console.error(error)
+      response.on("error", () => {
+        handleError(error);
       });
     });
-  },
-
+  }
 }
 
-module.exports = currencyApi
+function handleError(error){
+  console.error(error);
+};
+
+function parseData(body) {
+  var parsed = JSON.parse(body);
+  console.log(parsed);
+};
+
+module.exports = currencyApi;
