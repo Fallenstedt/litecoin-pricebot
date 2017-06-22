@@ -1,3 +1,3 @@
-let currencyApi = require('./js/currencyApi')
+let currencyApi = require('./currencyApi')
 
 // Functions that return currency info go here!
