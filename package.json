@@ -4,6 +4,8 @@
   "description": "A bot that posts the current price of litecoin every couple of hours",
   "main": "app.js",
   "scripts": {
+    "prestart": "npm install",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
