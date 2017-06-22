@@ -2,7 +2,7 @@
   "name": "litecoin-pricebot",
   "version": "1.0.0",
   "description": "A bot that posts the current price of litecoin every couple of hours",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +21,8 @@
   "homepage": "https://github.com/Fallenstedt/litecoin-pricebot#readme",
   "dependencies": {
     "async": "^2.4.1",
-    "dotenv": "^4.0.0"
+    "chai": "^4.0.2",
+    "dotenv": "^4.0.0",
+    "mocha": "^3.4.2"
   }
 }
