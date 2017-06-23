@@ -13,7 +13,7 @@ CONSUMER_SECRET=<key goes here>
 ACCESS_TOKEN=<key goes here>
 ACCESS_SECRET=<key goes here>
 ```
-1. Launch app with `npm start`
+1. Launch app with `node app.js`
 
 ## Running the tests
 
