@@ -57,6 +57,19 @@ const currencyInfo = {
   }
 }
 
+function upOrDownEmoji (stringNum) {
+  let num = parseFloat(stringNum),
+  emoji;
+  if (num > 0) {
+    emoji = '⬆︎';
+  } else if (num < 0) {
+    emoji = '⬇︎'
+  } else {
+    emoji = "";
+  }
+  return emoji;
+}
+
 function round(value, exp) {
   if (typeof exp === 'undefined' || +exp === 0)
     return Math.round(value);
