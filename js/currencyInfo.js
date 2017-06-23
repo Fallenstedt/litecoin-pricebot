@@ -48,7 +48,7 @@ const currencyInfo = {
 
     callback(null, message);
   },
-  upOrDownEmoji: (stringNum) {
+  upOrDownEmoji: (stringNum) => {
     let num = parseFloat(stringNum),
     emoji;
 
