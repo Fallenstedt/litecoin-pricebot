@@ -48,27 +48,21 @@ const currencyInfo = {
 
     callback(null, message);
   },
-  upOrDownEmoji: (stringNum) => {
-    let num = parseInt(stringNum);
+  upOrDownEmoji: (stringNum) {
+    let num = parseFloat(stringNum),
+    emoji;
 
-    //return an up arrow or down arrow
-    var emoji = (num >= 0) ? '⬆︎' : '⬇︎'
+    if (num > 0) {
+      emoji = '⬆︎';
+    } else if (num < 0) {
+      emoji = '⬇︎'
+    } else {
+      emoji = "";
+    }
     return emoji;
   }
 }
 
-function upOrDownEmoji (stringNum) {
-  let num = parseFloat(stringNum),
-  emoji;
-  if (num > 0) {
-    emoji = '⬆︎';
-  } else if (num < 0) {
-    emoji = '⬇︎'
-  } else {
-    emoji = "";
-  }
-  return emoji;
-}
 
 function round(value, exp) {
   if (typeof exp === 'undefined' || +exp === 0)
