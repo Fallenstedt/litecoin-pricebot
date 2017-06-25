@@ -16,7 +16,7 @@ describe("currencyInfo ", ()=>{
       expect(arrow).to.equal("⬇︎");
       done();
     });
-    it("should return an empty string if the value is zero", (done) => {
+    it("should return no arrow if the value is zero", (done) => {
       var arrow = currencyInfo.upOrDownEmoji("0");
       expect(arrow).to.equal("");
       done();
