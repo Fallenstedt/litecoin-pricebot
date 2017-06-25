@@ -18,7 +18,6 @@ ACCESS_SECRET=<key goes here>
 ## Running the tests
 
 Run tests with `npm run test`
-TODO: make tests...
 
 ## Built With
 
