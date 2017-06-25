@@ -1,7 +1,8 @@
-require('dotenv').config({path: './config/.env'})
+// jshint esversion: 6
+require('dotenv').config({path: './config/.env'});
 const async = require('async');
 const currencyInfo = require('./js/currencyInfo');
-const poster = require('./js/twitterPoster')
+const poster = require('./js/twitterPoster');
 
 
 var CronJob = require('cron').CronJob;

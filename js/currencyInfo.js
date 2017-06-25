@@ -1,4 +1,5 @@
-const currencyApi = require('./currencyApi')
+// jshint esversion: 6
+const currencyApi = require('./currencyApi');
 const async = require('async');
 
 const currencyInfo = {
@@ -23,7 +24,7 @@ const currencyInfo = {
     } = data[0];
 
     //return object
-    var data = {
+    var tweetContent = {
       id,
       symbol,
       price_usd,
@@ -31,7 +32,7 @@ const currencyInfo = {
       percent_change_7d
     };
 
-    callback(null, data);
+    callback(null, tweetContent);
   },
   createTweet: (data, callback) => {
     if (!data) {
@@ -55,13 +56,13 @@ const currencyInfo = {
     if (num > 0) {
       emoji = '⬆︎';
     } else if (num < 0) {
-      emoji = '⬇︎'
+      emoji = '⬇︎';
     } else {
       emoji = "";
     }
     return emoji;
   }
-}
+};
 
 
 function round(value, exp) {
