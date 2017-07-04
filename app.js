@@ -7,7 +7,7 @@ const poster = require('./js/twitterPoster');
 
 var CronJob = require('cron').CronJob;
 
-new CronJob('00 51 * * * *', () => {
+new CronJob('00 */30 * * * *', () => {
 
   //fetch data and post it to twitter
   async.waterfall([

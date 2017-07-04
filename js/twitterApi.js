@@ -14,16 +14,6 @@ var accessTokenSecret;
 const OAUTH_CALLBACK = 'oob';
 
 const TwitterApi = {
-  authenticate: function(callback) {
-    console.warn("This hasn't been fully implemented yet!  Probably shouldn't be using.");
-    async.series([
-      initialAuthorize,
-      promptForPin,
-      finalizeOauth,
-    ], function(err) {
-      callback(err);
-    });
-  },
   makeTweet: function(string, callback) {
     initializeOauth();
     let url = TWEET_POST_URL;
@@ -61,31 +51,5 @@ function initializeOauth() {
   );
 }
 
-function initialAuthorize(callback) {
-  initializeOauth();
-
-  twitter.getOAuthRequestToken(function(error, token, tokenSecret, results) {
-    grabTokensFromInitialRequest(error, token, tokenSecret, results, callback);
-  });
-}
-
-function grabTokensFromInitialRequest(error, token, tokenSecret, results, callback) {
-  if (error) {
-    console.log("error", error);
-    throw error;
-  }
-
-  accessToken = token;
-  accessTokenSecret = tokenSecret;
-  callback(null);
-}
-
-function promptForPin(callback) {
-  callback();
-}
-
-function finalizeOauth(callback) {
-  callback();
-}
 
 module.exports = TwitterApi;

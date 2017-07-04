@@ -2,6 +2,7 @@
 const currencyApi = require('./currencyApi');
 const async = require('async');
 
+
 const currencyInfo = {
   fetchCoinInfo: (callback) => {
     async.waterfall([
